@@ -15,6 +15,7 @@ orange: #dd8e5a;
   --visited-link: #dd8e5a;
   --active-link: blue;
   --link-font-size: 23px;
+  --btn-background: white;
 }
 
 * {
@@ -30,7 +31,10 @@ body {
   color: var(--text-color);
   height: 100%;
   width: 100%;
+  margin: 0;
 }
+
+/* ------ Links ------ */
 
 a {
   color: var(--unopened-link);
@@ -53,6 +57,8 @@ a:active {
   color: var(--active-link);
 }
 
+/* ------ Buttons ------ */
+
 button,
 .btn,
 .btn_secondary {
@@ -66,22 +72,33 @@ button,
   padding: 10px;
   border-radius: 10px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  transition: 0.2s opacity;
+  transition: 0.2s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:hover,
+.btn:active {
+  transition: 0.2s opacity;
+  opacity: 0.8;
 }
 
 /* ------ NAVIGATION ------ */
 #navbar {
+  clear: all;
   position: fixed;
   width: 100%;
   top: 0;
   transition: top 1s;
+  z-index: 5;
 }
 
 .top-nav {
-  background-color: var(--primary-background);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .top-nav a {
@@ -108,8 +125,9 @@ a.logo-link {
 }
 
 .top-nav a.active {
-  background-color: var(--primary-color);
+  background-color: rgba(252, 252, 252, 0.2);
   color: var(--primary-font-color);
+  border-radius: 5px;
 }
 
 a.logo-link:hover {
@@ -121,7 +139,75 @@ a.logo-link:hover {
   display: none;
 }
 
-/* ----- Navbar media Query ------ */
+/* ------ Hero Image ------ */
+
+.hero-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/homepage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+
+/* ------ Main Content ------ */
+
+.main-content {
+  text-align: center;
+  color: white;
+}
+
+.main-title {
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.pkf-title {
+  font-size: 8vw;
+}
+
+.pkf-slogan {
+  font-size: 5vw;
+}
+
+.fb-btn {
+  text-align: center;
+}
+
+/* ------ PKF Overhead ------*/
+
+.pkf-overhead {
+  height: 50%;
+  width: 100%;
+}
+
+/* ------ Footer ------ */
+
+.main-footer {
+  background-color: slategrey;
+  position: absolute;
+  width: 100%;
+  padding: 5px;
+  clear: both;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-head {
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 0 2rem 0;
+}
+
+/* ------ Media Queries ------ */
+
+/* ------ Navbar media Query ------ */
 
 @media screen and (max-width: 600px) {
   .top-nav a:not(:first-child) {
@@ -149,5 +235,13 @@ a.logo-link:hover {
     float: none;
     display: block;
     text-align: left;
+  }
+}
+
+/* ------ Main Content ------ */
+
+@media screen and (max-width: 600px) {
+  .main-content {
+    margin-top: 4rem;
   }
 }
