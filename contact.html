@@ -55,6 +55,7 @@
           <a
             href="contact.html"
             role="menuitem"
+            class="active"
             target="_self"
             aria-label="Contact PKF button"
             aria-roledescription="Navigation button for the contact page."
@@ -86,7 +87,6 @@
           </a>
           <a
             href="pkfequine.html"
-            class="active"
             role="menuitem"
             target="_self"
             aria-label="Home Page"
@@ -100,31 +100,85 @@
       </div>
     </header>
 
-    <div class="content-wrap">
-    <div class="main-content">
-      <div class="hero-img">
-      <main class="main-title">
-        <h1 class="pkf-title">The Peaceable Kingdom</h1>
-        <h2 class="pkf-slogan">
-          A full service, small and personal boarding facility where your horse
-          comes first!
-        </h2>
-        <div class="fb-btn">
-          <a href="" class="btn">FB PAGE</a>
+    <section class="content">
+      <div class="contact-container">
+        <div class="contact-card">
+          <h1 class="secondary-title">
+            <span class="crue-span">Contact</span> Us
+          </h1>
+          <form
+            method="post"
+            action="/src/php/mail-handler.php"
+            class="contact-form"
+          >
+            <div class="row">
+              <div class="col-form_input">
+                <input
+                  pattern=".{2,}"
+                  maxlenght="30"
+                  required
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="*Full name"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-form_input">
+                <input
+                  pattern=".{5,}"
+                  maxlength="20"
+                  required
+                  class="email-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="*Your e-mail"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-form_input">
+                <input
+                  pattern=".{4,}"
+                  maxlength="50"
+                  required
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="*Subject"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-form_input">
+                <textarea
+                  minlength="5"
+                  name="message"
+                  id="message"
+                  style="height: 200px"
+                  maxlenght="350"
+                  placeholder="*Type your message here..."
+                ></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="submit-container">
+                <button class="contact-btn" type="submit" name="submit">
+                  Submit
+                </button>
+                <br />
+                <span style="font-size: 18px" class="required-field"
+                  >* Indicates a required field.</span
+                >
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-      </main>
-    </div>
-    <section>
-      <h2 class="title-center" >The Peaceable Kingdom Farm</h2>
-      <img src="img/homepage.png" class="pkf-overhead"/>
-      <p class="text-center padded">
-        We are a family owned and run boarding facility just minutes north of
-        Fort Collins. We provide full-service boarding and ensure only the
-        highest quality of care for your equine companions.
-      </p>
     </section>
-    </div>
+
     <footer class="main-footer">
       <div class="footer-left">
         <h2>Contact Us</h2>
@@ -144,6 +198,7 @@
           Cell: (970)-691-6941
         </p>
       </div>
+    </div>
     </footer>
   </div>
     <script src="src/js/burgermenu.js"></script>

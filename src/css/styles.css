@@ -8,7 +8,7 @@ orange: #dd8e5a;
 
 /* CSS Variables */
 :root {
-  --text-color: #000;
+  --text-color: white;
   --primary-color: green;
   --primary-font-size: 23px;
   --unopened-link: #000;
@@ -16,6 +16,7 @@ orange: #dd8e5a;
   --active-link: blue;
   --link-font-size: 23px;
   --btn-background: white;
+  --primary-background: black;
 }
 
 * {
@@ -27,7 +28,7 @@ body {
   font-weight: 400;
   font-size: var(--primary-font-size);
   line-height: 1.6;
-  background-color: var(--primary-background);
+  background-color: grey;
   color: var(--text-color);
   height: 100%;
   width: 100%;
@@ -39,6 +40,7 @@ body {
 a {
   color: var(--unopened-link);
   font-size: var(--link-font-size);
+  text-decoration: none;
 }
 
 a:visited {
@@ -120,18 +122,21 @@ a.logo-link {
 }
 
 .top-nav a:hover {
-  background-color: var(--primary-color);
-  color: var(--primary-font-color);
-}
-
-.top-nav a.active {
   background-color: rgba(252, 252, 252, 0.2);
   color: var(--primary-font-color);
   border-radius: 5px;
 }
 
+.top-nav a.active {
+  background-color: rgba(154, 241, 253, 0.2);
+  color: var(--primary-font-color);
+  border-radius: 5px;
+}
+
 a.logo-link:hover {
-  background-color: var(--primary-color);
+  background-color: rgba(252, 252, 252, 0.2);
+  color: var(--primary-font-color);
+  border-radius: 5px;
 }
 
 .top-nav .icon {
@@ -148,10 +153,11 @@ a.logo-link:hover {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
-/* ------ Main Content ------ */
+/* ------ Main Page ------ */
 
 .main-content {
   text-align: center;
@@ -164,15 +170,28 @@ a.logo-link:hover {
 }
 
 .pkf-title {
-  font-size: 8vw;
+  font-size: 5vw;
 }
 
 .pkf-slogan {
-  font-size: 5vw;
+  font-size: 3vw;
 }
 
 .fb-btn {
   text-align: center;
+}
+
+.title-center {
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.padded {
+  margin: 0 1rem;
+  padding: 2rem;
 }
 
 /* ------ PKF Overhead ------*/
@@ -186,23 +205,175 @@ a.logo-link:hover {
 
 .main-footer {
   background-color: slategrey;
-  position: absolute;
+  position: relative;
   width: 100%;
-  padding: 5px;
-  clear: both;
+  padding: 2rem;
   display: flex;
-  flex-direction: column;
+  flex: row;
+  justify-content: space-around;
 }
 
-.footer-head {
+.footer-left {
+  margin: 1rem;
+}
+
+.footer-center {
+  margin: 2rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer-right {
+  margin: 1rem;
   text-align: center;
 }
 
-.footer-links {
+.footer-link {
+  padding: 0 1rem;
+}
+
+/* ------ About Page ------ */
+
+.about-content {
+  margin: 2rem;
+  text-align: center;
+}
+
+.owner-container {
+  text-align: center;
+}
+
+.owner-img {
+  width: 400px;
+}
+
+/* ------ Contact Page ------ */
+
+/* Contact Form */
+
+.secondary-title {
+  margin: 10px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 5rem 12rem 1rem;
+  font-size: 18px;
+}
+
+.contact-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+
+input[type='text'],
+select,
+textarea {
+  width: 50%;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+  outline: none;
+}
+
+input[type='text'],
+select,
+textarea:focus {
+  border: 1px solid green;
+  outline: none;
+}
+
+input[type='email'],
+select,
+textarea {
+  width: 50%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+}
+
+input[type='email'],
+select,
+textarea:focus {
+  border: 1px solid green;
+  outline: none;
+}
+
+.contact-label {
+  margin-left: 25%;
+}
+
+label {
+  padding-right: 12px;
+  padding-top: 5px;
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  padding: 0 2rem 0;
+  justify-content: flex-start;
+  font-size: 18px;
+}
+
+label {
+  clear: all;
+}
+
+.min-labels {
+  font-size: 10px;
+}
+
+.submit-container {
+  text-align: center;
+}
+
+.contact-btn {
+  width: 45%;
+  background-color: var(--primary-color);
+  color: var(--primary-font-color);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contact-btn:hover {
+  opacity: 0.6;
+}
+
+.email-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+}
+
+.col-form_label,
+.col-form_input {
+  width: 100%;
+  margin-top: 0;
+}
+
+/* Clear floats after columns */
+.row::after {
+  display: table;
+  clear: both;
+}
+
+.contact-info {
+  display: block;
+  text-align: center;
+}
+
+.contact-text {
+  font-size: 18px;
 }
 
 /* ------ Media Queries ------ */
@@ -243,5 +414,17 @@ a.logo-link:hover {
 @media screen and (max-width: 600px) {
   .main-content {
     margin-top: 4rem;
+  }
+}
+
+/* ------ Footer Query ------ */
+
+@media screen and (max-width: 600px) {
+  .main-footer {
+    flex-direction: column;
+  }
+
+  .footer-left {
+    text-align: center;
   }
 }
