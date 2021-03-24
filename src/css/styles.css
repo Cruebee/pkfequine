@@ -239,6 +239,10 @@ a.logo-link:hover {
   text-align: center;
 }
 
+.about-title {
+  margin: 5rem 1rem 1rem;
+}
+
 .owner-container {
   text-align: center;
 }
@@ -259,7 +263,7 @@ a.logo-link:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 5rem 14rem 1rem;
+  margin: 8rem 14rem 5rem;
   font-size: 18px;
 }
 
@@ -379,6 +383,13 @@ label {
   font-size: 18px;
 }
 
+/* ------ Services ------- */
+
+.services-container {
+  margin: 5rem 1rem 1rem;
+  padding: 1rem;
+}
+
 /* ------ Testimonials ------ */
 
 .main{
@@ -387,11 +398,14 @@ label {
   margin-bottom: 2rem;
 }
 
+.test-title {
+  margin: 6rem 1rem 1rem;
+}
+
 h1 {
     font-size: 24px;
     font-weight: 400;
     text-align: center;
-    margin-top: 6rem;
 }
 
 img {
